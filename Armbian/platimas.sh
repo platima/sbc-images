@@ -1,9 +1,30 @@
 #!/bin/bash
 
-./compile.sh build BOARD=radxa-zero3 BRANCH=vendor BUILD_DESKTOP=yes BUILD_MINIMAL=no DESKTOP_APPGROUPS_SELECTED=platimas DESKTOP_ENVIRONMENT=xfce DESKTOP_ENVIRONMENT_CONFIG_NAME=config_base KERNEL_CONFIGURE=no RELEASE=bookworm
+RELEASES=("bookworm" "sid")
+BOARDS=("radxa-zero3" "rock-3a")
+BRANCHES=("vendor" "legacy")
 
-./compile.sh build BOARD=radxa-zero3 BRANCH=vendor BUILD_DESKTOP=yes BUILD_MINIMAL=no DESKTOP_APPGROUPS_SELECTED=platimas DESKTOP_ENVIRONMENT=xfce DESKTOP_ENVIRONMENT_CONFIG_NAME=config_base KERNEL_CONFIGURE=no RELEASE=sid
+PACKAGES="libglx-mesa0
+libgl1-mesa-dri
+mesa-utils
+mesa-utils-extra
+vlc
+glmark2-x11
+net-tools
+screen
+vim
+neofetch
+chromium"
 
-./compile.sh build BOARD=radxa-zero3 BRANCH=legacy BUILD_DESKTOP=yes BUILD_MINIMAL=no DESKTOP_APPGROUPS_SELECTED=platimas DESKTOP_ENVIRONMENT=xfce DESKTOP_ENVIRONMENT_CONFIG_NAME=config_base KERNEL_CONFIGURE=no RELEASE=bookworm
+for RELEASE in ${RELEASES[@]}; do
+    PACKAGES_FILE="config/desktop/$RELEASE/appgroups/platimas/packages"
+    if [ ! -f $PACKAGES_FILE ]; then
+        echo $PACKAGES > $PACKAGES_FILE
+    fi
 
-./compile.sh build BOARD=radxa-zero3 BRANCH=legacy BUILD_DESKTOP=yes BUILD_MINIMAL=no DESKTOP_APPGROUPS_SELECTED=platimas DESKTOP_ENVIRONMENT=xfce DESKTOP_ENVIRONMENT_CONFIG_NAME=config_base KERNEL_CONFIGURE=no RELEASE=sid
+    for BOARD in ${BOARDS[@]}; do
+        for BRANCH in ${BRANCHES[@]}; do
+            ./compile.sh build BOARD=$BOARD BRANCH=$BRANCH BUILD_DESKTOP=yes BUILD_MINIMAL=no DESKTOP_APPGROUPS_SELECTED=platimas DESKTOP_ENVIRONMENT=xfce DESKTOP_ENVIRONMENT_CONFIG_NAME=config_base KERNEL_CONFIGURE=no RELEASE=$RELEASE
+        done
+    done
+done
