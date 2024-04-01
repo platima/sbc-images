@@ -11,4 +11,4 @@
 ## Benchmarks
 - glmark2-x11 gave a score of
 - Geekbench5: [144 single 459 multi](https://browser.geekbench.com/v5/cpu/22364872) ([Radxa release b6 results here](https://browser.geekbench.com/v5/cpu/22362662))
-- Geekbench6: TBC [184 single 447 multi](https://browser.geekbench.com/v6/cpu/5550272) ([Radxa release b6 results here](https://browser.geekbench.com/v6/cpu/5537554))
+- Geekbench6: [184 single 447 multi](https://browser.geekbench.com/v6/cpu/5550272) ([Radxa release b6 results here](https://browser.geekbench.com/v6/cpu/5537554))
