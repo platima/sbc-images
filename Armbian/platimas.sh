@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -f "compile.sh" ]; then 
+    echo  "Could not find compile.sh - please make sure you're in the Armbian 'build' folder"
+    exit 1
+fi
+
 RELEASES=("bookworm" "sid")
 BOARDS=("radxa-zero3" "rock-3a")
 BRANCHES=("vendor" "legacy")
