@@ -5,6 +5,13 @@
 - VLC does not support RTSP so flatpak required
 - glmark-x11 result of 249 (best yet compared to bookworm, and compared to 5.10 kernel and drivers)
 
+## OpenGL Information
+```
+GL_VENDOR:      Mesa
+GL_RENDERER:    Mali-G52 r1 (Panfrost)
+GL_VERSION:     3.1 Mesa 24.0.4-1
+```
+
 ## VLC (from flathub via flatpak)
 - TBC
 
