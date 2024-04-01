@@ -6,7 +6,8 @@ if [ ! -f "compile.sh" ]; then
 fi
 
 RELEASES=("bookworm" "sid")
-BOARDS=("radxa-zero3" "rock-3a")
+BOARDS=("rock-3a")
+#BOARDS=("radxa-zero3" "rock-3a")
 BRANCHES=("vendor" "legacy")
 
 PACKAGES="libglx-mesa0
