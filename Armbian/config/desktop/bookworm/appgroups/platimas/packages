@@ -1,0 +1,11 @@
+libglx-mesa0
+libgl1-mesa-dri
+mesa-utils
+mesa-utils-extra
+vlc
+glmark2-x11
+net-tools
+screen
+vim
+neofetch
+chromium
