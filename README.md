@@ -4,7 +4,7 @@
 
 # Radxa
 ## UPDATE
-**2025-04-01**: Added new Zero 3 Debian Bookworm CLI and XFCE images using the latest `rsdk`
+**2025-04-01**: Added new Zero 3 Debian Bookworm CLI and XFCE images using the latest [rsdk](https://github.com/RadxaOS-SDK/rsdk).
 
 ## Legacy Images:
 At the time of writing (2024-04-01) the Radxa images for the Rock 3A and Zero 3W have a number of problems, namely;
